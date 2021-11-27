@@ -1,0 +1,176 @@
+{
+    "seoul": {
+        "1": {
+            "label": "보통",
+            "description": "30분 이내",
+            "color": "#15a527"
+        },
+        "2": {
+            "label": "붐빔",
+            "description": "60분 이내",
+            "color": "#ff9600"
+        },
+        "3": {
+            "label": "혼잡",
+            "description": "90분 이상",
+            "color": "#e1002a"
+        },
+        "4": {
+            "label": "운영예정",
+            "description": "운영예정",
+            "color": "#858585"
+        },
+        "5": {
+            "label": "",
+            "description": "",
+            "color": ""
+        },
+        "6": {
+            "label": "접수마감",
+            "description": "접수마감",
+            "color": "#707070"
+        },
+        "7": {
+            "label": "잠시중단",
+            "description": "잠시중단(소독/폭염 등)",
+            "color": "#00b4e1"
+        },
+        "16": {
+            "label": "조기마감",
+            "description": "조기마감",
+            "color": "#707070"
+        },
+        "21": {
+            "label": "8:00 오픈",
+            "description": "오픈(08:00)",
+            "color": "#00b4e1"
+        },
+        "22": {
+            "label": "9:00 오픈",
+            "description": "오픈(09:00)",
+            "color": "#00b4e1"
+        },
+        "23": {
+            "label": "9:30 오픈",
+            "description": "오픈(09:30)",
+            "color": "#00b4e1"
+        },
+        "24": {
+            "label": "10:00 오픈",
+            "description": "오픈(10:00)",
+            "color": "#00b4e1"
+        },
+        "25": {
+            "label": "12:00 오픈",
+            "description": "오픈(12:00)",
+            "color": "#00b4e1"
+        },
+        "26": {
+            "label": "13:00 오픈",
+            "description": "오픈(13:00)",
+            "color": "#00b4e1"
+        },
+        "27": {
+            "label": "15:00 오픈",
+            "description": "오픈(15:00)",
+            "color": "#00b4e1"
+        },
+        "28": {
+            "label": "16:00 오픈",
+            "description": "오픈(16:00)",
+            "color": "#00b4e1"
+        },
+        "29": {
+            "label": "17:00 오픈",
+            "description": "오픈(17:00)",
+            "color": "#00b4e1"
+        },
+        "41": {
+            "label": "미운영",
+            "description": "오픈(미운영)",
+            "color": "#00b4e1"
+        },
+        "42": {
+            "label": "운영예정",
+            "description": "운영예정",
+            "color": "#858585"
+        },
+        "43": {
+            "label": "조사중",
+            "description": "혼잡도 조사중",
+            "color": "#858585"
+        }
+    },
+    "incheon": {
+        "1": {
+            "label": "보통",
+            "description": "30분 이내",
+            "color": "#15a527"
+        },
+        "2": {
+            "label": "붐빔",
+            "description": "60분 이내",
+            "color": "#ff9600"
+        },
+        "3": {
+            "label": "혼잡",
+            "description": "90분 이상",
+            "color": "#e1002a"
+        },
+        "4": {
+            "label": "운영예정",
+            "description": "운영예정",
+            "color": "#858585"
+        },
+        "5": {
+            "label": "",
+            "description": "",
+            "color": ""
+        },
+        "6": {
+            "label": "접수마감",
+            "description": "접수마감",
+            "color": "#707070"
+        },
+        "7": {
+            "label": "잠시중단",
+            "description": "잠시중단(소독/폭염 등)",
+            "color": "#00b4e1"
+        },
+        "16": {
+            "label": "조기마감",
+            "description": "조기마감",
+            "color": "#707070"
+        },
+        "21": {
+            "label": "짜증",
+            "description": "2시간 이상",
+            "color": "#580000"
+        },
+        "22": {
+            "label": "종료",
+            "description": "종료",
+            "color": "#707070"
+        },
+        "23": {
+            "label": "확인불가",
+            "description": "확인불가",
+            "color": "#858585"
+        },
+        "121": {
+            "label": "짜증",
+            "description": "2시간 이상",
+            "color": "#580000"
+        },
+        "122": {
+            "label": "종료",
+            "description": "종료",
+            "color": "#707070"
+        },
+        "123": {
+            "label": "확인불가",
+            "description": "확인불가",
+            "color": "#858585"
+        }
+    }
+}
