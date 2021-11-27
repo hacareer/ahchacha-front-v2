@@ -8,10 +8,14 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
+import {SvgXml} from 'react-native-svg';
 import {useSelector} from 'react-redux';
 import {IReduxState} from '../../redux/types';
 import Icon from '../Atoms/Icon';
 import Text from '../Atoms/Text';
+import user from '../../../assets/images/icons/user.svg';
+import alert from '../../../assets/images/icons/Alert.svg';
+import {HEADER_STYLE} from '../../../styles/header';
 
 export default function LocationSelectHeader() {
   const navigation = useNavigation();
@@ -20,10 +24,11 @@ export default function LocationSelectHeader() {
   const styles = StyleSheet.create({
     header: {
       width: '100%',
-      height: 68,
+      height: HEADER_STYLE.height,
       backgroundColor: 'white',
       flexDirection: 'row',
       alignItems: 'flex-end',
+      justifyContent: 'space-between',
       overflow: 'visible',
       position: 'relative',
       elevation: 2,
@@ -32,7 +37,7 @@ export default function LocationSelectHeader() {
     },
     locationWrap: {
       marginLeft: 21,
-      marginBottom: 16,
+      marginBottom: 12,
       flexDirection: 'row',
       alignItems: 'center',
     },
@@ -66,11 +71,27 @@ export default function LocationSelectHeader() {
       <Pressable style={styles.locationWrap} onPress={handleLocationPress}>
         <Text
           children={userInfo?.location?.address}
-          style={{fontSize: 20}}
+          style={{fontSize: 18}}
           isMed
         />
-        <Icon name="chevron-down-outline" size={16} isPressable={false} />
+        <Icon
+          name="chevron-down-outline"
+          size={18}
+          isPressable={false}
+          color="#D1D1D1"
+          style={{marginTop: 2}}
+        />
       </Pressable>
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginBottom: 15,
+          marginRight: 24,
+        }}>
+        <SvgXml xml={alert} stroke="#D1D1D1" style={{marginRight: 20}} />
+        <SvgXml xml={user} stroke="#D1D1D1" />
+      </View>
       {showLocationDrawer && LocationDrawer}
     </View>
   );
