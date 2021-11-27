@@ -34,12 +34,6 @@ export default function ClinicDetailScreen({route}) {
           subTitle={clinicData.address || ''}
         />
       ),
-      headerTitleAlign: 'center',
-      headerTitleStyle: {
-        justifyContent: 'center',
-        alignItems: 'center',
-      },
-      headerStyle: HEADER_STYLE,
     });
   }
   function handleAddReviewPress() {

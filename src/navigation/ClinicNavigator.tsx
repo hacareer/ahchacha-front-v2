@@ -26,7 +26,18 @@ export default function ClinicNavigator() {
           headerStyle: HEADER_STYLE,
         }}
       />
-      <Clinic.Screen name="Detail" component={ClinicDetailScreen} />
+      <Clinic.Screen
+        name="Detail"
+        component={ClinicDetailScreen}
+        options={{
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+            justifyContent: 'center',
+            alignItems: 'flex-end',
+          },
+          headerStyle: HEADER_STYLE,
+        }}
+      />
     </Clinic.Navigator>
   );
 }
