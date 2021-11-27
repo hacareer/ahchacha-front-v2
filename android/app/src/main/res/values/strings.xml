@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ahchacha</string>
+    <string name="kakao_app_key">a45ff8e34a4f93bd8afe4d7a06cf9692</string>
+    <string name="kakao_api_key">kakaoa45ff8e34a4f93bd8afe4d7a06cf9692</string>
+    <string name="google_map_api_key">AIzaSyDFQg5H3djg8O9VaKzqloz5XB67JzHPrxs</string>
+</resources>

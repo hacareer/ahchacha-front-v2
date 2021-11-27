@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+    <!--<domain-config cleartextTrafficPermitted="true" />
+     <domain includeSubdomains="true">flit.co.kr</domain>
+        <domain includeSubdomains="true">github.io</domain>
+        <domain includeSubdomains="true">rss.blog.naver.com</domain>
+        <domain includeSubdomains="true">tistory.com</domain>
+        <domain includeSubdomains="true">medium.com</domain>
+        <domain includeSubdomains="true">blogspot.com</domain>
+        <domain includeSubdomains="true">velog.com</domain>
+    </domain-config> -->
+</network-security-config>

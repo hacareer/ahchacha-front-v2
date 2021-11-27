@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "302109229342",
+    "project_id": "ahchacha-8f274",
+    "storage_bucket": "ahchacha-8f274.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302109229342:android:39e30d7c527946de35090f",
+        "android_client_info": {
+          "package_name": "com.pathfinder.ahchacha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302109229342-m2j9vkt4h7umr7betklugs3gjiqlp9gu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pathfinder.ahchacha",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "302109229342-10rv4knvkk7h6e39sm0kbdhnh385ndd5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQI43cYh2BO0R6UMcmurBMiL2GALc-WOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302109229342-10rv4knvkk7h6e39sm0kbdhnh385ndd5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
