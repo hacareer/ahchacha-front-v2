@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="411.43" height="325" viewBox="0 0 411.43 325">
+    <defs>
+      <linearGradient id="linear-gradient" x1="0.5" y1="0.187" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+        <stop offset="0" stop-color="#8dffbb" stop-opacity="0.2"/>
+        <stop offset="0.4" stop-color="#a3f49a" stop-opacity="0.2"/>
+        <stop offset="1" stop-color="#ffc715" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <rect id="사각형_19" data-name="사각형 19" width="411.43" height="325" fill="url(#linear-gradient)"/>
+  </svg>
+  
