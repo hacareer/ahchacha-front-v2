@@ -3,16 +3,17 @@ import * as React from 'react';
 import {Pressable, View} from 'react-native';
 import DatePicker from 'react-native-date-picker';
 import {ScrollView} from 'react-native-gesture-handler';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import Button from '../../../components/Atoms/Button';
 import Text from '../../../components/Atoms/Text';
-import {API} from '../../../redux/actions/fetch';
+import {API, fetchCheckUpResult} from '../../../redux/actions/fetch';
 import {IReduxState} from '../../../redux/types';
 import {dateToKRString} from '../../../utils/date';
 import {calendarStyle} from './style';
 
 export default function CalendarAddScheduleScreen() {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
   const userInfo = useSelector((state: IReduxState) => state.userInfo);
 
   const [date, setDate] = React.useState(new Date());
@@ -20,6 +21,7 @@ export default function CalendarAddScheduleScreen() {
   async function handleSubmit() {
     try {
       await API.post('check-up-result', {startTime: date});
+      fetchCheckUpResult(dispatch);
       navigation.goBack();
     } catch (err) {
       console.log(err);
