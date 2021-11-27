@@ -15,12 +15,16 @@ export default function TextHeader(props: IHeader) {
     headerSubTitle: {
       fontSize: 12,
       textAlign: 'center',
+      marginTop: 2,
+      color: '#AAAAAA',
     },
   });
   return (
     <View style={styles.headerTitleWrap}>
-      <Text children={title} style={styles.headerTitle} isBold />
-      {!!subTitle && <Text children={subTitle} style={styles.headerSubTitle} />}
+      <Text children={title} style={styles.headerTitle} isMed />
+      {!!subTitle && (
+        <Text children={subTitle} style={styles.headerSubTitle} isReg />
+      )}
     </View>
   );
 }
