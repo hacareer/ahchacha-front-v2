@@ -20,7 +20,7 @@ import {
   IDay,
 } from '../../../utils/date';
 import {SvgXml} from 'react-native-svg';
-import clock from '../../../../assets/images/clock.svg';
+import clock from '../../../../assets/images/atoms/clock.svg';
 import {fetchClinicData} from '../../../redux/actions/fetch';
 import GlassMorphism from '../../../../assets/images/glass_morphism/main.svg';
 import CharacterBody from '../../../../assets/images/character/character-body.svg';

@@ -3,10 +3,10 @@ import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import Layout from '../../../constants/Layout';
 import Text from '../Atoms/Text';
-import main from '../../../assets/images/bottom_tab/Main.svg';
-import calendar from '../../../assets/images/bottom_tab/Calendar.svg';
-import map from '../../../assets/images/bottom_tab/Map.svg';
-import school from '../../../assets/images/bottom_tab/School.svg';
+import main from '../../../assets/images/icons/Main.svg';
+import alert from '../../../assets/images/icons/Alert.svg';
+import compass from '../../../assets/images/icons/Compass.svg';
+import message from '../../../assets/images/icons/Message.svg';
 
 export default function BottomTab(props) {
   const {state, descriptors, navigation} = props;
@@ -48,16 +48,16 @@ export default function BottomTab(props) {
               <SvgXml xml={main} stroke={isFocused ? '#686868' : '#d1d1d1'} />
             )}
             {route.name === 'Map' && (
-              <SvgXml xml={map} stroke={isFocused ? '#686868' : '#d1d1d1'} />
+              <SvgXml xml={compass} stroke={isFocused ? '#686868' : '#d1d1d1'} />
             )}
             {route.name === 'Calendar' && (
               <SvgXml
-                xml={calendar}
+                xml={alert}
                 stroke={isFocused ? '#686868' : '#d1d1d1'}
               />
             )}
             {route.name === 'School' && (
-              <SvgXml xml={school} stroke={isFocused ? '#686868' : '#d1d1d1'} />
+              <SvgXml xml={message} stroke={isFocused ? '#686868' : '#d1d1d1'} />
             )}
           </>
         );

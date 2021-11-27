@@ -2,7 +2,7 @@ import * as React from 'react';
 import {GestureResponderEvent, Pressable, StyleSheet} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import Text from './Atoms/Text';
-import Alarm from '../../assets/images/bottom_tab/Calendar.svg';
+import Alert from '../../assets/images/icons/Alert.svg';
 
 interface IFABProps {
   onPress?: (e: GestureResponderEvent) => void;
@@ -27,7 +27,7 @@ export default function FAB(props: IFABProps) {
   });
   return (
     <Pressable style={styles.wrap} onPress={onPress}>
-      <SvgXml xml={Alarm} color="white" stroke="white" width={24} height={22}/>
+      <SvgXml xml={Alert} color="white" stroke="white" width={24} height={22} />
     </Pressable>
   );
 }

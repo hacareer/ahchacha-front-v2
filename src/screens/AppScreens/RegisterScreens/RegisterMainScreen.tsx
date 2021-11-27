@@ -23,7 +23,7 @@ import {
 import {useDispatch} from 'react-redux';
 import Character from '../../../../assets/images/character/character2.png';
 import star1 from '../../../../assets/images/atoms/star1.png';
-import kakaoLogin from '../../../../assets/images/atoms/kakao-login.svg';
+import kakaoLogin from '../../../../assets/images/etc/kakao-login.svg';
 import ahChaCha from '../../../../assets/images/logo/ahchacha.svg';
 import Svg, {SvgXml} from 'react-native-svg';
 
