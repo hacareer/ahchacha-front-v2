@@ -40,7 +40,7 @@ cd ahchacha-front-v2
 yarn install
 ```
 
-⛏ 안드로이드 `adb device` 에서 `debug` 시작하기
+⛏ Android `adb device` 에서 `debug` 시작하기
 
 ```
 yarn android
@@ -52,13 +52,13 @@ yarn android
 yarn ios
 ```
 
-⛏ 안드로이드 `debug` 버전 `apk` 빌드하기
+⛏ Android `debug` 버전 `apk` 빌드하기
 
 ```
 yarn build:android
 ```
 
-⛏ 안드로이드 `release` 버전 `aab` 빌드하기
+⛏ Android `release` 버전 `aab` 빌드하기
 
 ```
 yarn release:android
