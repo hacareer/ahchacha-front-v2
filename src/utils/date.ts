@@ -64,7 +64,6 @@ export function getFormattedDate(dateObj: Date) {
 }
 export function formatRemainingTime(dateObj: Date): -1 | string {
   if (!dateObj) return '';
-  console.log(dateObj);
 
   const nowObj = new Date();
   const nowTime = nowObj.getTime();
