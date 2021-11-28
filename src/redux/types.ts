@@ -11,6 +11,7 @@ export interface IReduxState {
   };
   clinicData: IClinic[];
   checkUpResult: ICheckUpResult[];
+  checkUp: ICheckUp[];
 }
 export interface ILocation {
   id?: number;
@@ -101,4 +102,9 @@ export interface ICheckUpResult {
   id: number;
   startTime: Date;
   finishTime: Date;
+}
+export interface ICheckUp {
+  id: number;
+  date: Date;
+  clinic: IClinic;
 }

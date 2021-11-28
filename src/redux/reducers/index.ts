@@ -8,6 +8,7 @@ import {
   SET_CLINIC_DATA,
   SET_TEMP_DATA_1,
   SET_CHECK_UP_RESULT,
+  SET_CHECK_UP,
 } from '../actions/fetch';
 import {IAddress, IReduxState} from '../types';
 interface Action {
@@ -22,6 +23,7 @@ const initialState: IReduxState = {
   clinicData: [],
   tempData1: [],
   checkUpResult: [],
+  checkUp: [],
   /*
   userInfo: {
     deviceId:
@@ -98,6 +100,11 @@ export default (
       return {
         ...state,
         checkUpResult: action.payload,
+      };
+    case SET_CHECK_UP:
+      return {
+        ...state,
+        checkUp: action.payload,
       };
     default:
       return state;

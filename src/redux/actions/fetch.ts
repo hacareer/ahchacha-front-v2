@@ -11,6 +11,7 @@ export const SET_USER_ADDRESS = 'SET_USER_ADDRESS';
 export const SET_CLINIC_DATA = 'SET_CLINIC_DATA';
 export const SET_TEMP_DATA_1 = 'SET_TEMP_DATA_1';
 export const SET_CHECK_UP_RESULT = 'SET_CHECK_UP_RESULT';
+export const SET_CHECK_UP = 'SET_CHECK_UP';
 
 export const API = axios.create({
   // baseURL: 'https://flit.co.kr/api/v1',
@@ -49,12 +50,21 @@ export async function getRefreshToken() {
 }
 export async function fetchAllDatas(dispatch: Dispatch) {
   try {
-    await Promise.all([fetchUserInfo(dispatch), fetchCheckUpResult(dispatch)]);
+    await Promise.all([
+      fetchUserInfo(dispatch),
+      fetchCheckUpResult(dispatch),
+      fetchCheckUp(dispatch),
+    ]);
     return true;
   } catch (err) {
     console.error(err);
     return false;
   }
+}
+export async function fetchCheckUp(dispatch: Dispatch) {
+  const {data} = await API.get('/check-up/my');
+  console.log(data.data);
+  dispatch(setCheckUp(data.data));
 }
 export async function fetchUserInfo(dispatch: Dispatch) {
   const {data} = await API.get('/user/my');
@@ -79,6 +89,10 @@ export async function fetchClinicData(
 //     dispatch(tempDataUpdated(data));
 //   };
 // }
+export const setCheckUp = (data: any) => ({
+  type: SET_CHECK_UP,
+  payload: data,
+});
 export const setCheckUpResult = (data: any) => ({
   type: SET_CHECK_UP_RESULT,
   payload: data,
