@@ -11,6 +11,7 @@ export default function TextHeader(props: IHeader) {
     headerTitleWrap: {},
     headerTitle: {
       fontSize: 20,
+      textAlign: 'center',
     },
     headerSubTitle: {
       fontSize: 12,
