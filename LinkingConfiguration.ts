@@ -1,7 +1,7 @@
 import {ILinkingConfiguration} from './types/types';
 
 const config: ILinkingConfiguration = {
-  prefixes: [],
+  prefixes: ['ahchacha://'],
   config: {
     screens: {
       BottomTab: {
@@ -14,20 +14,20 @@ const config: ILinkingConfiguration = {
           },
         },
       },
-      Hospital: {
+      Clinic: {
         screens: {
           Detail: {
-            path: 'hospital/:hospitalID/detail',
+            path: 'clinic/:clinicID/detail',
             parse: {
-              key: (hospitalID: number) => `hospital-detail-${hospitalID}`,
-              id: (hospitalID: number) => hospitalID,
+              key: (clinicID: number) => `clinic-detail-${clinicID}`,
+              id: (clinicID: number) => clinicID,
             },
           },
           Review: {
-            path: 'hospital/:hospitalID/review',
+            path: 'clinic/:clinicID/review',
             parse: {
-              key: (hospitalID: number) => `hospital-review-${hospitalID}`,
-              id: (hospitalID: number) => hospitalID,
+              key: (clinicID: number) => `clinic-review-${clinicID}`,
+              id: (clinicID: number) => clinicID,
             },
           },
         },
