@@ -6,6 +6,7 @@
     <!-- react-native-bootsplash -->
     <style name="BootTheme" parent="AppTheme">
         <!-- set the generated bootsplash.xml drawable as activity background -->
-        <item name="android:background">@drawable/bootsplash</item>
+        <!-- <item name="android:background">@drawable/bootsplash</item> -->
+        <item name="android:background">@drawable/ic_bootsplash</item>
     </style>
 </resources>
