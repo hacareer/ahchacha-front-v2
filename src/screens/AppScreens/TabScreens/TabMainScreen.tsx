@@ -26,6 +26,8 @@ import GlassMorphism from '../../../../assets/images/glass_morphism/main.svg';
 import CharacterBody from '../../../../assets/images/character/character-body.svg';
 import Character from '../../../../assets/images/character/character2.png';
 import star2 from '../../../../assets/images/atoms/star2.png';
+import 서대문구보건소 from '../../../../assets/images/etc/서대문구보건소.png';
+import 신촌기차역공영 from '../../../../assets/images/etc/신촌기차역공영.png';
 
 export default function TabMainScreen() {
   const userInfo = useSelector((state: IReduxState) => state.userInfo);
@@ -46,7 +48,7 @@ export default function TabMainScreen() {
     );
   }, []);
   const HospitalScrollView = (
-    <ScrollView horizontal nestedScrollEnabled>
+    <ScrollView horizontal nestedScrollEnabled style={{marginTop: 23}}>
       {clinicData.map(elem => (
         <ClinicCardView
           id={elem.id}
@@ -205,6 +207,7 @@ function ClinicCardView(props) {
       width: 256,
       height: 180,
       borderRadius: 6,
+      marginRight: 10,
     },
     congestion: {
       position: 'absolute',
@@ -223,10 +226,13 @@ function ClinicCardView(props) {
     image: {
       width: 256,
       height: 115,
+      borderTopRightRadius: 6,
+      borderTopLeftRadius: 6,
     },
     infoWrap: {
       marginTop: 12,
       marginLeft: 10,
+      elevation: 7,
     },
     name: {
       fontSize: 20,
@@ -250,7 +256,10 @@ function ClinicCardView(props) {
   }
   return (
     <Pressable style={styles.wrap} onPress={handlePress}>
-      <View style={styles.image} />
+      <Image
+        source={Math.random() < 0.5 ? 신촌기차역공영 : 서대문구보건소}
+        style={styles.image}
+      />
       {/* <View style={styles.congestion}>
         <View style={styles.congestionIcon} />
         <Text style={styles.congestionText} children={congestion} />
@@ -299,7 +308,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   remainingBarWrap: {
-    height: 368,
+    height: 348,
     backgroundColor: 'white',
     // paddingTop: 32,
     paddingBottom: 32,
