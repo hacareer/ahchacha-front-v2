@@ -18,15 +18,6 @@ export default function ClinicNavigator() {
         options={{header: () => <LocationSelectHeader />}}
       />
       <Clinic.Screen
-        name="Review"
-        component={ClinicReviewScreen}
-        options={{
-          headerTitle: () => <TextHeader title="후기 작성" />,
-          headerTitleAlign: 'center',
-          headerStyle: HEADER_STYLE,
-        }}
-      />
-      <Clinic.Screen
         name="Detail"
         component={ClinicDetailScreen}
         options={{
@@ -35,6 +26,15 @@ export default function ClinicNavigator() {
             justifyContent: 'center',
             alignItems: 'flex-end',
           },
+          headerStyle: HEADER_STYLE,
+        }}
+      />
+      <Clinic.Screen
+        name="Review"
+        component={ClinicReviewScreen}
+        options={{
+          headerTitle: () => <TextHeader title="후기 작성" />,
+          headerTitleAlign: 'center',
           headerStyle: HEADER_STYLE,
         }}
       />
