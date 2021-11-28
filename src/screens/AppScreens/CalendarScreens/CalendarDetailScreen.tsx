@@ -7,15 +7,15 @@ export default function CalendarDetailScreen() {
 }
 function CalendarView() {
   const linkto = useLinkTo();
-  const [alarmList, setAlarmList] = React.useState([]);
+  const dispatch = useDispatch();
+  const checkUp = useSelector((state: IReduxState) => state.checkUp);
   const [markings, setMarkings] = React.useState({});
   function handleDayPress() {
     linkto('/calendar/schedule');
   }
   async function getAlarmList() {
     try {
-      const {data} = await API.get('check-up/my');
-      setAlarmList(data.data);
+      fetchCheckUp(dispatch);
     } catch (err) {
       console.log(err);
     }
@@ -25,7 +25,7 @@ function CalendarView() {
   }, []);
   React.useEffect(() => {
     const to = {};
-    alarmList.map(alarm => {
+    checkUp.map(alarm => {
       const formatted = getFormattedDate(new Date(alarm.date));
       to[formatted] = {
         // disabled: true,
@@ -36,7 +36,7 @@ function CalendarView() {
       };
     });
     setMarkings(to);
-  }, [alarmList]);
+  }, [checkUp]);
   return (
     <CalendarList
       markingType={'period'}
@@ -58,8 +58,10 @@ function CalendarView() {
   );
 }
 import {LocaleConfig} from 'react-native-calendars';
-import {API} from '../../../redux/actions/fetch';
-import { getFormattedDate } from '../../../utils/date';
+import {useDispatch, useSelector} from 'react-redux';
+import {API, fetchCheckUp} from '../../../redux/actions/fetch';
+import {IReduxState} from '../../../redux/types';
+import {getFormattedDate} from '../../../utils/date';
 LocaleConfig.locales['kr'] = {
   monthNames: [
     '1월',

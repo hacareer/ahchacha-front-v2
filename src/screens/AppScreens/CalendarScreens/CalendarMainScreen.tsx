@@ -16,13 +16,14 @@ import {
 import {useNavigation} from '@react-navigation/core';
 import {SvgXml} from 'react-native-svg';
 import more from '../../../../assets/images/atoms/more.svg';
-import {API} from '../../../redux/actions/fetch';
-import {useSelector} from 'react-redux';
+import {API, fetchCheckUp} from '../../../redux/actions/fetch';
+import {useDispatch, useSelector} from 'react-redux';
 import {IReduxState} from '../../../redux/types';
 
 export default function CalendarMainScreen() {
+  const dispatch = useDispatch();
+  const checkUp = useSelector((state: IReduxState) => state.checkUp);
   const [days, setDays] = React.useState<IDay[]>([]);
-  const [alarmList, setAlarmList] = React.useState([]);
   const checkUpResult = useSelector(
     (state: IReduxState) => state.checkUpResult,
   );
@@ -114,7 +115,7 @@ export default function CalendarMainScreen() {
   );
   const AddAlarmItem = (
     <Pressable
-      onPress={() => navigation.navigate('AddAlarm')}
+      onPress={() => navigation.push('AddAlarm')}
       style={[
         styles.alarmItem,
         {
@@ -128,7 +129,7 @@ export default function CalendarMainScreen() {
   );
   const AlarmList = (
     <ScrollView style={styles.alarmList} horizontal nestedScrollEnabled>
-      {alarmList.map(alarm => (
+      {checkUp.map(alarm => (
         <AlarmItem date={new Date(alarm.date)} />
       ))}
       {AddAlarmItem}
@@ -142,8 +143,7 @@ export default function CalendarMainScreen() {
   }
   async function getAlarmList() {
     try {
-      const {data} = await API.get('check-up/my');
-      setAlarmList(data.data);
+      fetchCheckUp(dispatch);
     } catch (err) {
       console.log(err);
     }
@@ -193,7 +193,7 @@ export default function CalendarMainScreen() {
               onPress={handleCalendarDetailPress}
             />
           </View>
-          <CalendarView alarmList={alarmList} />
+          <CalendarView alarmList={checkUp} />
         </View>
       </ScrollView>
       <FAB text="알람 예약" onPress={handleAddAlarmPress} />

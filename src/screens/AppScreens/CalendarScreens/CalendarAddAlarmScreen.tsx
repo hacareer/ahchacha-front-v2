@@ -6,13 +6,18 @@ import DatePicker from 'react-native-date-picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Button from '../../../components/Atoms/Button';
 import {calendarStyle} from './style';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {IAddress, IClinic, IReduxState} from '../../../redux/types';
 import {dateToKRString} from '../../../utils/date';
-import {API} from '../../../redux/actions/fetch';
+import {
+  API,
+  fetchCheckUp,
+  fetchCheckUpResult,
+} from '../../../redux/actions/fetch';
 import Colors from '../../../../constants/Colors';
 
 export default function CalendarAddAlarmScreen({navigation}) {
+  const dispatch = useDispatch();
   const userInfo = useSelector((state: IReduxState) => state.userInfo);
   const [parsedDate, setParsedDate] = React.useState('');
   const [date, setDate] = React.useState(new Date());
@@ -87,6 +92,8 @@ export default function CalendarAddAlarmScreen({navigation}) {
       };
       console.log(data);
       await API.post('check-up', data);
+      // success
+      fetchCheckUp(dispatch);
       navigation.goBack();
     } catch (err) {
       console.log(err);
