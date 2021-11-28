@@ -14,7 +14,7 @@ import Text from './Text';
 
 export default function Button({
   text,
-  backgroundColor = Colors.light.primary,
+  backgroundColor = '#62FFA1',
   // color = '#606060',
   color = 'black',
   onPress,
