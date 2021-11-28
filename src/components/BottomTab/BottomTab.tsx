@@ -48,16 +48,19 @@ export default function BottomTab(props) {
               <SvgXml xml={main} stroke={isFocused ? '#686868' : '#d1d1d1'} />
             )}
             {route.name === 'Map' && (
-              <SvgXml xml={compass} stroke={isFocused ? '#686868' : '#d1d1d1'} />
-            )}
-            {route.name === 'Calendar' && (
               <SvgXml
-                xml={alert}
+                xml={compass}
                 stroke={isFocused ? '#686868' : '#d1d1d1'}
               />
             )}
+            {route.name === 'Calendar' && (
+              <SvgXml xml={alert} stroke={isFocused ? '#686868' : '#d1d1d1'} />
+            )}
             {route.name === 'School' && (
-              <SvgXml xml={message} stroke={isFocused ? '#686868' : '#d1d1d1'} />
+              <SvgXml
+                xml={message}
+                stroke={isFocused ? '#686868' : '#d1d1d1'}
+              />
             )}
           </>
         );
