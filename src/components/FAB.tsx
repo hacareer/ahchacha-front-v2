@@ -27,7 +27,7 @@ export default function FAB(props: IFABProps) {
   });
   return (
     <Pressable style={styles.wrap} onPress={onPress}>
-      <SvgXml xml={Alert} color="white" stroke="white" width={24} height={22} />
+      <SvgXml xml={Alert} stroke="white" width={24} height={22} />
     </Pressable>
   );
 }
