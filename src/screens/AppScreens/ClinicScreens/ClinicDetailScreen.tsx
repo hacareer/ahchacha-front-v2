@@ -1,19 +1,18 @@
 import {useNavigation} from '@react-navigation/core';
 import * as React from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
+import {Image, ScrollView, StyleSheet, View} from 'react-native';
 import Text from '../../../components/Atoms/Text';
 import Button from '../../../components/Atoms/Button';
 import Icon from '../../../components/Atoms/Icon';
 import {useLinkTo} from '@react-navigation/native';
 import TextHeader from '../../../components/Header/TextHeader';
-import {HEADER_STYLE} from '../../../../styles/header';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import {API} from '../../../redux/actions/fetch';
 import {IClinic} from '../../../redux/types';
+import map1 from '../../../../assets/images/atoms/map1.png';
 
 export default function ClinicDetailScreen({route}) {
-  const {id = 49} = route.params;
-  console.log(id);
+  const id = route?.params?.id || 49;
   const [clinicData, setClinicData] = React.useState<IClinic>({});
   const [comments, setComments] = React.useState([]);
   const [commentsCount, setCommentsCount] = React.useState(0);
@@ -57,8 +56,18 @@ export default function ClinicDetailScreen({route}) {
       backgroundColor: 'white',
     },
     timeInfo: {
-      height: 211,
-      backgroundColor: '#D3D3D3',
+      height: 170,
+      backgroundColor: 'white',
+      borderRadius: 10,
+      marginTop: 8,
+      paddingLeft: 20,
+      paddingRight: 20,
+      paddingBottom: 38,
+      justifyContent: 'space-between',
+    },
+    timeInfoTitle: {
+      marginTop: 36,
+      fontSize: 24,
     },
     reviewItem: {
       marginRight: 20,
@@ -115,19 +124,19 @@ export default function ClinicDetailScreen({route}) {
     </View>
   );
   const OpenCloseTime = ({name, time}) => (
-    <View style={{flexDirection: 'row', alignItems: 'center', marginLeft: 22}}>
+    <View style={{flexDirection: 'row', alignItems: 'center'}}>
       <View
         style={{
           width: 50,
           height: 25,
-          borderRadius: 9,
-          backgroundColor: 'white',
+          borderRadius: 4,
+          backgroundColor: '#FFDC7B',
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <Text children={name} style={{fontSize: 16}} />
+        <Text children={name} style={{fontSize: 14}} isReg />
       </View>
-      <Text children={time} style={{marginLeft: 29}} />
+      <Text children={time} style={{marginLeft: 8}} />
     </View>
   );
   const ReviewTitle = (
@@ -141,17 +150,25 @@ export default function ClinicDetailScreen({route}) {
         marginTop: 30,
         marginBottom: 16,
       }}>
-      <Text children="후기" style={{fontSize: 20}} />
+      <Text
+        children={'검사소를\n다녀간 분들의 후기 💬'}
+        style={{fontSize: 24}}
+        isBold
+      />
       <View
         style={{
           width: 24,
           height: 24,
-          borderRadius: 4,
-          backgroundColor: '#EBEBEB',
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <Icon name="add" size={19} noPadding onPress={handleAddReviewPress} />
+        <Icon
+          name="add-circle-outline"
+          size={24}
+          color="#D1D1D1"
+          noPadding
+          onPress={handleAddReviewPress}
+        />
       </View>
     </View>
   );
@@ -169,38 +186,67 @@ export default function ClinicDetailScreen({route}) {
       />
     </MapView>
   );
+  const ReviewItemLists = (
+    <>
+      <ReviewItem
+        text="검사가 빨리 끝나요 💨"
+        percentage={
+          `${(comments[0]?.number / commentsCount) * 100 || 50}%` || '60%'
+        }
+      />
+      <ReviewItem
+        text="교통이 불편해요 😣"
+        percentage={
+          `${(comments[1]?.number / commentsCount) * 100 || 26}%` || '30%'
+        }
+      />
+      <ReviewItem
+        text="늦게까지 해요 🌙"
+        percentage={
+          `${(comments[2]?.number / commentsCount) * 100 || 16}%` || '10%'
+        }
+      />
+      <ReviewItem
+        text="근처에 주차공간이 있어요 🚘"
+        percentage={`${(comments[3]?.number / commentsCount) * 100 || 8}%`}
+      />
+      <ReviewItem
+        text="검사자수가 많아요 👥"
+        percentage={`${(comments[4]?.number / commentsCount) * 100}%`}
+      />
+    </>
+  );
   React.useEffect(() => {}, []);
   return (
-    <ScrollView>
+    <ScrollView style={{backgroundColor: '#F4F4F4'}}>
       {GoogleMap}
       {RemainingTime}
       <View style={styles.timeInfo}>
-        <OpenCloseTime name="오픈" time="오전 10:00" />
-        <View style={{height: 9}} />
-        <OpenCloseTime name="마감" time="오후 07:00" />
+        <Text style={styles.timeInfoTitle} children="정보 🗓" isBold />
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <OpenCloseTime name="오픈" time="오전 10:00" />
+          <OpenCloseTime name="마감" time="오후 07:00" />
+        </View>
+        <Image
+          source={map1}
+          style={{
+            width: 104,
+            height: 104,
+            position: 'absolute',
+            right: 24,
+            top: -19,
+          }}
+        />
       </View>
-      <View style={{paddingBottom: 40}}>
+      <View
+        style={{
+          paddingBottom: 40,
+          backgroundColor: 'white',
+          borderRadius: 10,
+          marginTop: 8,
+        }}>
         {ReviewTitle}
-        <ReviewItem
-          text="검사가 빨리 끝나요 💨"
-          percentage={`${(comments[0]?.number / commentsCount) * 100}%`}
-        />
-        <ReviewItem
-          text="교통이 불편해요 😣"
-          percentage={`${(comments[1]?.number / commentsCount) * 100}%`}
-        />
-        <ReviewItem
-          text="늦게까지 해요 🌙"
-          percentage={`${(comments[2]?.number / commentsCount) * 100}%`}
-        />
-        <ReviewItem
-          text="근처에 주차공간이 있어요 🚘"
-          percentage={`${(comments[3]?.number / commentsCount) * 100}%`}
-        />
-        <ReviewItem
-          text="검사자수가 많아요 👥"
-          percentage={`${(comments[4]?.number / commentsCount) * 100}%`}
-        />
+        {ReviewItemLists}
       </View>
     </ScrollView>
   );
